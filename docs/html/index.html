@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Welcome to Engineering_student_numerical_analysis_toolkit’s documentation! &#8212; Engineering_student_numerical_analysis_toolkit 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d1102ebc" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=12dfc556" />
+    <script src="_static/documentation_options.js?v=d45e8c67"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="welcome-to-engineering-student-numerical-analysis-toolkit-s-documentation">
+<h1>Welcome to Engineering_student_numerical_analysis_toolkit’s documentation!<a class="headerlink" href="#welcome-to-engineering-student-numerical-analysis-toolkit-s-documentation" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#module-root_finding_problem.root_finding_methods" title="root_finding_problem.root_finding_methods"><code class="xref py py-obj docutils literal notranslate"><span class="pre">root_finding_problem.root_finding_methods</span></code></a></p></td>
+<td><p>This module shows some examples of root finding methods</p></td>
+</tr>
+</tbody>
+</table>
+<p id="module-root_finding_problem.root_finding_methods">This module shows some examples of root finding methods</p>
+<p>Classes:
+IntervalError(Exception)
+IterativeAlgorithm(abc.ABC)
+DividingSearchSolverClass(IterativeAlgorithm)
+BisectionSolverClass(DividingSearchSolverClass)
+TrisectionSolverClass(DividingSearchSolverClass)
+FixedPointSolverClass(IterativeAlgorithm)
+NewtonSolverClass(FixedPointSolverClass)
+SecantSolverClass(FixedPointSolverClass)
+RegularFalsiSolverClass(FixedPointSolverClass)
+SteffensenSolverClass(FixedPointSolverClass)</p>
+<p>Functions:
+secant_function(f_x: Callable, x_ab: tuple) -&gt; float
+regula_falsi_function(f_x: Callable, x_ab: tuple) -&gt; tuple</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.BisectionSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">BisectionSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.BisectionSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.DividingSearchSolverClass" title="root_finding_problem.root_finding_methods.DividingSearchSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">DividingSearchSolverClass</span></code></a></p>
+<p>This is the bisection solver class - a type of dividing search algorithm with a space division of 2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>a_n</strong> (<em>float</em>) – Low limit of studied interval</p></li>
+<li><p><strong>b_n</strong> (<em>float</em>) – High limit of studied interval</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.DividingSearchSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">DividingSearchSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">number_of_division</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.DividingSearchSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.IterativeAlgorithm" title="root_finding_problem.root_finding_methods.IterativeAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterativeAlgorithm</span></code></a></p>
+<p>Class for algorithm of dividing search (greedy algorithm/divide and conquer type)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>a_n</strong> (<em>float</em>) – Low limit of studied interval</p></li>
+<li><p><strong>b_n</strong> (<em>float</em>) – High limit of studied interval</p></li>
+<li><p><strong>number_of_division</strong> (<em>int</em>) – Number of space division in order to find a solution (Default value = 2 - Bisection)</p></li>
+<li><p><strong>**kwargs</strong> – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>Exception</strong> – If number_of_division is less than 2</p></li>
+<li><p><a class="reference internal" href="#root_finding_problem.root_finding_methods.IntervalError" title="root_finding_problem.root_finding_methods.IntervalError"><strong>IntervalError</strong></a> – In case of bad interval selected (multiple or no root.s)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.DividingSearchSolverClass.check_interval">
+<span class="sig-name descname"><span class="pre">check_interval</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.DividingSearchSolverClass.check_interval" title="Link to this definition">¶</a></dt>
+<dd><p>This is the checking function for interval for bisection and trisection methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#root_finding_problem.root_finding_methods.IntervalError" title="root_finding_problem.root_finding_methods.IntervalError"><strong>IntervalError</strong></a> – In case of bad interval selected (multiple or no root.s)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Low or high interval value if they are a sufficient approximation else return empty</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.DividingSearchSolverClass.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.DividingSearchSolverClass.solve" title="Link to this definition">¶</a></dt>
+<dd><p>Method for solving root finding problem using Dividing Search</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#root_finding_problem.root_finding_methods.IntervalError" title="root_finding_problem.root_finding_methods.IntervalError"><strong>IntervalError</strong></a> – In case of bad interval selected (multiple or no root.s)</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The solution in a first return and the number of iteration in a second</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Union[list(float), int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.FixedPointSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">FixedPointSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">f_x:</span> <span class="pre">~typing.Callable,</span> <span class="pre">p_0:</span> <span class="pre">[&lt;class</span> <span class="pre">'float'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'tuple'&gt;],</span> <span class="pre">**kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.IterativeAlgorithm" title="root_finding_problem.root_finding_methods.IterativeAlgorithm"><code class="xref py py-class docutils literal notranslate"><span class="pre">IterativeAlgorithm</span></code></a></p>
+<p>This is the fixed point solver class - a type of iterative algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>p_0</strong> (<em>Union</em><em>[</em><em>float</em><em>, </em><em>tuple</em><em>]</em>) – Starting point of fixed point algorithm. Can be a tuple depending on the algorithm</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.FixedPointSolverClass.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass.solve" title="Link to this definition">¶</a></dt>
+<dd><p>This is an abstract method for solving the root finding method, needs to be overwritten in children class</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.IntervalError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">IntervalError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">a_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_code</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.IntervalError" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>This is a children class of exception focusing on interval errors for bisection and trisection methods</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>a_n</strong> (<em>float</em>) – Low limit of studied interval</p></li>
+<li><p><strong>b_n</strong> (<em>float</em>) – High limit of studied interval</p></li>
+<li><p><strong>error_code</strong> (<em>int</em>) – Type of error to display</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.IterativeAlgorithm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">IterativeAlgorithm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nb_iteration</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1e-09</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.IterativeAlgorithm" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>This is an abstractive class for iterative algorithms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>nb_iteration</strong> (<em>int</em><em>, </em><em>optional</em>) – Number of iterations (By default it is set to 100)</p></li>
+<li><p><strong>tolerance</strong> (<em>float</em><em>, </em><em>optional</em>) – Tolerance for root finding methods (By default it is set to 1e-9)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.IterativeAlgorithm.solve">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.IterativeAlgorithm.solve" title="Link to this definition">¶</a></dt>
+<dd><p>This is an abstract method for solving the root finding method, needs to be overwritten in children class</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.NewtonSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">NewtonSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.NewtonSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass" title="root_finding_problem.root_finding_methods.FixedPointSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">FixedPointSolverClass</span></code></a></p>
+<p>This is the Newton solver class - a type of fixed point algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>df_x</strong> (<em>Callable</em>) – Handle of the derivative of the studied function</p></li>
+<li><p><strong>p_0</strong> (<em>float</em>) – Starting point of the Newton algorithm</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ZeroDivisionError</strong> – If derivative at p_0 is nul</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.RegularFalsiSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">RegularFalsiSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.RegularFalsiSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass" title="root_finding_problem.root_finding_methods.FixedPointSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">FixedPointSolverClass</span></code></a></p>
+<p>This is the Regula Falsi solver class - a type of fixed point algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>p_0</strong> (<em>tuple</em>) – Starting point of the regula falsi algorithm</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ZeroDivisionError</strong> – If estimated derivative at p_0 is nul</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.SecantSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">SecantSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.SecantSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass" title="root_finding_problem.root_finding_methods.FixedPointSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">FixedPointSolverClass</span></code></a></p>
+<p>This is the Secant solver class - a type of fixed point algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>p_0</strong> (<em>tuple</em>) – Starting point of the secant algorithm</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ZeroDivisionError</strong> – If estimated derivative at p_0 is nul</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.SteffensenSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">SteffensenSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_0</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.SteffensenSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.FixedPointSolverClass" title="root_finding_problem.root_finding_methods.FixedPointSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">FixedPointSolverClass</span></code></a></p>
+<p>This is the Steffensen solver class - a type of fixed point algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>p_0</strong> (<em>float</em>) – Starting point of the steffensen algorithm</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.SteffensenSolverClass.steffensen_function">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">steffensen_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#root_finding_problem.root_finding_methods.SteffensenSolverClass.steffensen_function" title="Link to this definition">¶</a></dt>
+<dd><p>This is a helper function to decide which point is the nearest to the root of a function f(x)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>p_n</strong> (<em>float</em>) – Value to compute with steffensen</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ZeroDivisionError</strong> – If denominator of update rule is nul</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new tuple with the regula falsi condition</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.TrisectionSolverClass">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">TrisectionSolverClass</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">a_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#root_finding_problem.root_finding_methods.TrisectionSolverClass" title="Link to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#root_finding_problem.root_finding_methods.DividingSearchSolverClass" title="root_finding_problem.root_finding_methods.DividingSearchSolverClass"><code class="xref py py-class docutils literal notranslate"><span class="pre">DividingSearchSolverClass</span></code></a></p>
+<p>This is the trisection solver class - a type of dividing search algorithm with a space division of 3</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>a_n</strong> (<em>float</em>) – Low limit of studied interval</p></li>
+<li><p><strong>b_n</strong> (<em>float</em>) – High limit of studied interval</p></li>
+<li><p><strong>**kwargs</strong> (<em>dict</em>) – Complementary keyword arguments for the optional argument of IterativeAlgorithm class
+(see IterativeAlgorithm)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.regula_falsi_function">
+<span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">regula_falsi_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span></span></span><a class="headerlink" href="#root_finding_problem.root_finding_methods.regula_falsi_function" title="Link to this definition">¶</a></dt>
+<dd><p>This is a helper function to update the values of x_ab using the regula_falsi rule</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>x_ab</strong> (<em>tuple</em>) – Tuple values to update following the regula_falsi update rule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The new tuple with the regula_falsi update rule</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="root_finding_problem.root_finding_methods.secant_function">
+<span class="sig-prename descclassname"><span class="pre">root_finding_problem.root_finding_methods.</span></span><span class="sig-name descname"><span class="pre">secant_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f_x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ab</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#root_finding_problem.root_finding_methods.secant_function" title="Link to this definition">¶</a></dt>
+<dd><p>This is a helper function to update the values of x_ab using the secant rule.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f_x</strong> (<em>Callable</em>) – Handle of studied function</p></li>
+<li><p><strong>x_ab</strong> (<em>tuple</em>) – Tuple values to update following the secant update rule</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ZeroDivisionError</strong> – In case of update rule implies a division by zero</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>The new tuple with the secant update rule</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="#">Engineering_student_numerical_analysis_toolkit</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2024, Paul BERRAUTE.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 0.7.16</a>
+      
+      |
+      <a href="_sources/index.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

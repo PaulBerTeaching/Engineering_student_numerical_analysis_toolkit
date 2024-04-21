@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# Learn more: https://github.com/kennethreitz/setup.py
-
 from setuptools import setup, find_packages
 
 
@@ -12,13 +10,13 @@ with open('LICENSE') as f:
     license = f.read()
 
 setup(
-    name='sample',
-    version='0.1.0',
-    description='Sample package for Python-Guide.org',
+    name='ESNAT',
+    version='0.0.1',
+    description='Nnumerical analysis toolkit for first years of engineering studies',
     long_description=readme,
-    author='Kenneth Reitz',
-    author_email='me@kennethreitz.com',
-    url='https://github.com/kennethreitz/samplemod',
+    author='Paul BERRAUTE',
+    author_email='paul.berraute@hotmail.fr',
+    url='https://github.com/PaulBerTeaching',
     license=license,
     packages=find_packages(exclude=('tests', 'docs'))
 )

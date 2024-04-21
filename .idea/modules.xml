@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/pythonProjectSolvingEquaOneVar.iml" filepath="$PROJECT_DIR$/.idea/pythonProjectSolvingEquaOneVar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ENSAT.iml" filepath="$PROJECT_DIR$/.idea/ENSAT.iml" />
     </modules>
   </component>
 </project>

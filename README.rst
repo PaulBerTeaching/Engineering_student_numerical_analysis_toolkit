@@ -1,10 +1,4 @@
-Sample Module Repository
+Engineering Student Numerical Analysis Toolkit (E.S.N.A.T.)
 ========================
 
-This simple project is an example repo for Python projects.
-
-`Learn more <http://www.kennethreitz.org/essays/repository-structure-and-python>`_.
-
----------------
-
-If you want to learn more about ``setup.py`` files, check out `this repository <https://github.com/kennethreitz/setup.py>`_.
+This project contains useful functions to introduce you to numerical analysis in your first years of engineering studies.
